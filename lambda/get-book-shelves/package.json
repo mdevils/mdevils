@@ -1,0 +1,16 @@
+{
+  "name": "get-book-shelves",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/xml2js": "^0.4.5",
+    "xml2js": "^0.4.22"
+  },
+  "scripts": {
+    "clean": "rm -Rf dist",
+    "build": "PATH=$PATH':../../node_modules/.bin' tsc -p .",
+    "deploy": "export PATH=$PATH':../../node_modules/.bin' && rm -f function.zip && yarn build && zip -r function.zip index.js dist node_modules && aws lambda update-function-code --function-name get-book-shelves --zip-file fileb://function.zip && rm -f function.zip",
+    "test": "PATH=$PATH':../../node_modules/.bin' ts-node test"
+  }
+}
