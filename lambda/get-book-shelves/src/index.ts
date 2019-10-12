@@ -86,7 +86,12 @@ async function getAllBooks(): Promise<Book[]> {
   return resultBooks.concat(...results);
 }
 
-const cache = new Cache(DAY, getAllBooks);
+const cache = new Cache({
+  bucketName: 'mdevils-cache',
+  cacheFilename: 'get-book-shelves.json',
+  expiresAfter: DAY,
+  getValue: getAllBooks
+});
 
 export async function handler() {
   return {
