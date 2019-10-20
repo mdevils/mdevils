@@ -1,17 +1,11 @@
 import * as React from 'react';
-import {Header} from '../../components/header';
-import {PageContainer} from '../../components/page-container';
+import {PageLayout} from '../../partials/page-layout';
 
 
 export function HomePage() {
   return (
-    <>
-      <PageContainer as='header'>
-        <Header />
-      </PageContainer>
-      {/*<PageContainer as='main'>*/}
-      {/*  <Chronology />*/}
-      {/*</PageContainer>*/}
-    </>
+    <PageLayout>
+      Hello World
+    </PageLayout>
   );
 }
