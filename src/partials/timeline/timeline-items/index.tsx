@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {filterColors, timelineBarSpacer, timelineGridLineColor, TimelineItemLaned, TimelineItemType} from '../const';
 import {formatDuration} from '../format-duration';
 import {TimelineItemsByEndDate} from '../get-timeline-index';
-
+import npmIcon from './npm.png';
 
 const TimelineDate = styled.div`
   position: relative;
@@ -84,8 +84,19 @@ const ItemLang = styled.div`
   color: white;
 `;
 
+const ItemIcon = styled.div`
+  display: inline-block;
+  margin-left: 5px;
+  position: relative;
+  top: 3px;
+  height: 14px;
+  width: 14px;
+  background: url(${npmIcon});
+  background-size: 100% 100%;
+`;
+
 function Item({
-  item: {title, text, id, type, to, from = to, link, video, audio, photo, language},
+  item: {title, text, id, type, to, from = to, link, video, audio, photo, language, icon},
   onEnter,
   onLeave,
   hovered
@@ -106,6 +117,9 @@ function Item({
   let textContent = (<ItemText>{text}</ItemText>);
   if (language) {
     textContent = <>{textContent}<ItemLang>{language}</ItemLang></>
+  }
+  if (icon) {
+    textContent = <>{textContent}<ItemIcon /></>
   }
   if (link) {
     textContent = <ItemTextLink href={link}>{textContent}</ItemTextLink>;

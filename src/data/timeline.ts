@@ -9,6 +9,7 @@ export type TimelineItemSource = {
   to: string;
   text?: string;
   language?: 'RUS';
+  icon?: 'npm';
   programmingLanguages?: string[];
   software?: string[];
   importance?: number;
@@ -37,7 +38,7 @@ export const timeline: TimelineItem[] = ([
     type: 'work',
     title: 'ASP.NET Developer',
     text: 'Allatravels',
-    from: '2004-11',
+    from: '2005-11',
     to: '2008-01',
     programmingLanguages: ['C#', 'SQL'],
     software: ['ASP.NET']
@@ -64,7 +65,7 @@ export const timeline: TimelineItem[] = ([
     title: 'ASP.NET Developer',
     text: 'NPO "Anna"',
     link: 'http://npoanna.ru/',
-    from: '2004-07',
+    from: '2005-07',
     to: '2008-02',
     programmingLanguages: ['C#', 'JavaScript'],
     software: ['ASP.NET']
@@ -199,6 +200,7 @@ export const timeline: TimelineItem[] = ([
     title: 'ENB',
     text: 'BEM-based project bundler (like Webpack)',
     link: 'https://en.bem.info/toolbox/enb/',
+    icon: 'npm',
     from: '2013-03',
     to: '2015-01'
   },
@@ -207,6 +209,7 @@ export const timeline: TimelineItem[] = ([
     title: 'JSCS',
     text: 'JavaScript CodeStyle checker',
     link: 'https://jscs-dev.github.io/',
+    icon: 'npm',
     from: '2013-01',
     to: '2016-04'
   },
@@ -215,6 +218,7 @@ export const timeline: TimelineItem[] = ([
     title: 'html-entities',
     text: 'HTML Entities encoder / decoder',
     link: 'https://www.npmjs.com/package/html-entities',
+    icon: 'npm',
     importance: 2,
     from: '2013-02',
     to: '2019-08'
@@ -224,6 +228,7 @@ export const timeline: TimelineItem[] = ([
     title: 'css-selector-parser',
     text: 'CSS Selector parser',
     link: 'https://www.npmjs.com/package/css-selector-parser',
+    icon: 'npm',
     importance: 2,
     from: '2013-02',
     to: '2016-11'
@@ -233,13 +238,14 @@ export const timeline: TimelineItem[] = ([
     title: 'CST',
     text: 'JavaScript concrete syntax tree parser',
     link: 'https://www.npmjs.com/package/cst',
+    icon: 'npm',
     importance: 2,
     from: '2015-06',
     to: '2016-04'
   },
   {
     type: 'public',
-    title: 'Developing component libraries',
+    title: 'Talk: "Developing component libraries"',
     text: 'Yandex Conference',
     video: 'https://video.yandex.ru/users/ya-events/view/1788/',
     language: 'RUS',
@@ -247,7 +253,7 @@ export const timeline: TimelineItem[] = ([
   },
   {
     type: 'public',
-    title: 'ENB: BEM project assembler',
+    title: 'Talk: "ENB: BEM project assembler"',
     text: 'BEMup',
     video: 'https://events.yandex.ru/events/bemup/2-october-2013/?openTalkVideo=297-3',
     language: 'RUS',
@@ -255,7 +261,7 @@ export const timeline: TimelineItem[] = ([
   },
   {
     type: 'public',
-    title: 'JSCS: Developing OpenSource architecture',
+    title: 'Talk: "JSCS: Developing OpenSource architecture"',
     text: 'Talk in Rostov-on-Don, JS Meetup',
     link: 'https://www.facebook.com/events/562939683813604/',
     video: 'https://www.youtube.com/watch?v=VpKIiwYR-n0',
@@ -264,7 +270,7 @@ export const timeline: TimelineItem[] = ([
   },
   {
     type: 'public',
-    title: 'BEViS & BT',
+    title: 'Talk: "BEViS & BT"',
     text: 'Talk on CodeFest with Vadim Makishvili',
     link: 'https://2014.codefest.ru/lecture/790',
     video: 'https://www.youtube.com/watch?v=4qh6ko8jNKc',
@@ -273,7 +279,7 @@ export const timeline: TimelineItem[] = ([
   },
   {
     type: 'public',
-    title: 'BEViS & BT',
+    title: 'Talk: "BEViS & BT"',
     text: 'Talk on RIT++ with Vadim Makishvili',
     link: 'https://www.kp.ru/daily/26216.5/3100206/',
     language: 'RUS',
@@ -281,7 +287,7 @@ export const timeline: TimelineItem[] = ([
   },
   {
     type: 'public',
-    title: 'Podcast interview: JSCS, BEViS, Leadership',
+    title: 'Podcast interview: "JSCS, BEViS, Leadership"',
     text: 'Radio JS, #25',
     link: 'https://radiojs.ru/2015/06/radiojs-25/',
     audio: 'https://www.youtube.com/watch?v=VpKIiwYR-n0',
@@ -290,10 +296,10 @@ export const timeline: TimelineItem[] = ([
   },
   {
     type: 'public',
-    title: 'JSCS: JavaScript Code Style checker',
+    title: 'Talk: "JSCS: JavaScript Code Style checker"',
     text: 'Fullstack.JS Berlin',
     link: 'https://www.meetup.com/fullstack-berlin/events/226856447/',
-    photo: 'https://twitter.com/oelry/status/672502993846169601',
+    photo: 'https://twitter.com/_andreasgrimm/status/672500021233885184',
     to: '2015-12'
   }
 ] as TimelineItemSource[]).map((item: TimelineItemSource, index: number) => ({...item, id: `${index}`}));
