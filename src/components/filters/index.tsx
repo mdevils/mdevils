@@ -48,13 +48,13 @@ export function Filters({
 
 
 const FilterWrapper = styled.label<{color: string, checked: boolean}>`
+  cursor: pointer;
   display: inline-block;
   background-color: ${({color}) => color};
-  padding: 5px 10px;
+  padding: 3px 10px;
   font-weight: 400;
-  & + & {
-    margin-left: 10px;
-  }
+  font-size: 14px;
+  margin: 2px 0;
   ${({checked}) => checked ? '' : 'opacity: 0.5;'}
 `;
 
@@ -85,9 +85,12 @@ function Filter({
   }, [onStatusesChange, statuses, status]);
 
   return (
-    <FilterWrapper color={color} checked={statuses[status]}>
-      <FilterCheckbox type='checkbox' checked={statuses[status]} onChange={onChange} />
-      <FilterName>{name}</FilterName>
-    </FilterWrapper>
+    <>
+      <FilterWrapper color={color} checked={statuses[status]}>
+        <FilterCheckbox type='checkbox' checked={statuses[status]} onChange={onChange} />
+        <FilterName>{name}</FilterName>
+      </FilterWrapper>
+      {' '}
+    </>
   );
 }

@@ -17,6 +17,7 @@ const ModalWrapper = styled.div`
   background: rgba(0,0,0,0.3);
   padding: 20px;
   overflow-y: auto;
+  z-index: 10;
 `;
 
 const ModalActions = styled.div`
