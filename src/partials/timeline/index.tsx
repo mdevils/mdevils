@@ -77,6 +77,14 @@ function TimelineContents({timeline}: {timeline: TimelineItem[]}) {
     setHoveredId(null);
   }, []);
 
+  if (timeline.length === 0) {
+    return (
+      <>
+        I might add some of my hobbies here in future...
+      </>
+    );
+  }
+
   return (
     <TimelineContentsWrapper>
       <TimelineLanes
