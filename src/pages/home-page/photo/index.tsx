@@ -1,8 +1,8 @@
 import {default as React, useCallback, useState} from 'react';
 import styled from 'styled-components';
 import {Modal} from '../../../components/modal';
-import portrait from '../images/portrait.jpg';
 
+const portrait = '/photo-20191027.jpg';
 
 const PhotoImg = styled.img`
   max-width: 100%;
@@ -14,7 +14,7 @@ const PhotoWrapper = styled.div`
 `;
 
 const getPhotoImg = () => (
-  <PhotoImg src={portrait} alt='Marat Dulin' />
+  <PhotoImg src={portrait} alt={'Marat Dulin\'s photo'} />
 );
 
 export function Photo() {

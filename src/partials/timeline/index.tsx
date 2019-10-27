@@ -16,6 +16,8 @@ const filterTimeline = memoizeOne((timeline: TimelineItem[], filter: Filter) => 
   return timeline.filter(({type}) => filter[type]);
 });
 
+const FilterWrapper = styled.section``;
+
 export function Timeline({timeline}: {timeline: TimelineItem[]}) {
   const [filterStatuses, setStatuses] = useState<Filter>({
     public: true,
@@ -27,12 +29,14 @@ export function Timeline({timeline}: {timeline: TimelineItem[]}) {
   let filteredTimeline = filterTimeline(timeline, filterStatuses);
   return (
     <>
-      <Filters
-        colors={filterColors}
-        names={filterNames}
-        statuses={filterStatuses}
-        onStatusesChange={setStatuses as any}
-      />
+      <FilterWrapper aria-label='Select what information to show'>
+        <Filters
+          colors={filterColors}
+          names={filterNames}
+          statuses={filterStatuses}
+          onStatusesChange={setStatuses as any}
+        />
+      </FilterWrapper>
       <TimelineSummary
         timeline={filteredTimeline}
       />
@@ -41,7 +45,7 @@ export function Timeline({timeline}: {timeline: TimelineItem[]}) {
   )
 }
 
-const TimelineContentsWrapper = styled.div`
+const TimelineContentsWrapper = styled.section`
   list-style: none;
   margin: 0;
   padding: 0;
@@ -86,7 +90,7 @@ function TimelineContents({timeline}: {timeline: TimelineItem[]}) {
   }
 
   return (
-    <TimelineContentsWrapper>
+    <TimelineContentsWrapper aria-label='My experience timeline'>
       <TimelineLanes
         lanes={lanes}
         resolution={resolution}

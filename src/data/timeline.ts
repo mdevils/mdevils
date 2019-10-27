@@ -13,6 +13,7 @@ export type TimelineItemSource = {
   work?: string[];
   software?: string[];
   importance?: number;
+  team?: number;
 }
 
 export type TimelineItem = TimelineItemSource & {
@@ -125,7 +126,8 @@ export const timeline: TimelineItem[] = ([
     link: 'https://yandex.com/maps',
     from: '2014-03',
     to: '2015-03',
-    work: ['Team leadership', 'JavaScript', 'BEM', 'Node.js']
+    work: ['Team leadership', 'JavaScript', 'BEM', 'Node.js'],
+    team: 5
   },
   {
     type: 'work',
@@ -143,7 +145,8 @@ export const timeline: TimelineItem[] = ([
     link: 'https://matterway.io/',
     from: '2015-10',
     to: '2019-05',
-    work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux']
+    work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux'],
+    team: 5
   },
   {
     type: 'work',
@@ -152,7 +155,8 @@ export const timeline: TimelineItem[] = ([
     link: 'https://www.zalando-lounge.com/',
     from: '2019-07',
     to: now,
-    work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux']
+    work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux'],
+    team: 10
   },
   {
     type: 'education',

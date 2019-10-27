@@ -123,7 +123,7 @@ export function TimelineLanes({
   onLeave: () => void
 }) {
   return (
-    <LanesWrapper>
+    <LanesWrapper aria-hidden='true'>
       {lanes.map((lane, index) => (
         <LaneWrapper key={index}>
           {lane.map(({from, to, type, id}, index) => (

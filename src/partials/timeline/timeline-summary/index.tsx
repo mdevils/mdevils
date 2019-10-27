@@ -36,25 +36,30 @@ const collectOpenSource = memoizeOne((timeline: TimelineItem[]) => {
   return timeline.filter(({type}) => type === 'openSource').length;
 });
 
-const TimelineSummaryWrapper = styled.ul`
-  list-style: none;
+const TimelineSummaryWrapper = styled.section`
   margin: 20px 0;
-  padding: 0;
+`;
+const TimelineSymmaryItemList = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 480px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 `;
 const TimelineSymmaryItem = styled.li`
   flex: 0 0 50%;
   min-width: 240px;
   font-size: 16px;
-  margin-top: 6px;
+  margin: 6px 0 0;
+  padding: 0;
 `;
 const TimelineSymmaryItemTerm = styled.span`
   margin-right: 6px;
 `;
 const TimelineSymmaryItemValue = styled.span`
+  display: inline;
   color: #555;
 `;
 
@@ -63,23 +68,25 @@ export function TimelineSummary({timeline}: {timeline: TimelineItem[]}) {
   const publicEvents = collectPublicEvents(timeline);
   const openSource = collectOpenSource(timeline);
   return (
-    <TimelineSummaryWrapper>
-      {Object.keys(experience).map((key) => (
-        <TimelineSymmaryItem key={key}>
-          <TimelineSymmaryItemTerm>{key}</TimelineSymmaryItemTerm>
-          <TimelineSymmaryItemValue>{formatDuration(experience[key], false)}</TimelineSymmaryItemValue>
-        </TimelineSymmaryItem>
-      ))}
-      {openSource > 0 && (
-        <TimelineSymmaryItem key={'openSource'}>
-          <TimelineSymmaryItemTerm>{openSource} OpenSoure projects</TimelineSymmaryItemTerm>
-        </TimelineSymmaryItem>
-      )}
-      {publicEvents > 0 && (
-        <TimelineSymmaryItem key={'public'}>
-          <TimelineSymmaryItemTerm>{publicEvents} public talks</TimelineSymmaryItemTerm>
-        </TimelineSymmaryItem>
-      )}
+    <TimelineSummaryWrapper aria-label='Key data about my experience'>
+      <TimelineSymmaryItemList>
+        {Object.keys(experience).map((key) => (
+          <TimelineSymmaryItem key={key}>
+            <TimelineSymmaryItemTerm>{key}</TimelineSymmaryItemTerm>
+            <TimelineSymmaryItemValue>{formatDuration(experience[key], false)}</TimelineSymmaryItemValue>
+          </TimelineSymmaryItem>
+        ))}
+        {openSource > 0 && (
+          <TimelineSymmaryItem key={'openSource'}>
+            <TimelineSymmaryItemTerm>{openSource} OpenSource projects</TimelineSymmaryItemTerm>
+          </TimelineSymmaryItem>
+        )}
+        {publicEvents > 0 && (
+          <TimelineSymmaryItem key={'public'}>
+            <TimelineSymmaryItemTerm>{publicEvents} public talks</TimelineSymmaryItemTerm>
+          </TimelineSymmaryItem>
+        )}
+      </TimelineSymmaryItemList>
     </TimelineSummaryWrapper>
   );
 }

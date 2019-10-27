@@ -7,6 +7,16 @@ const PageContentWrapper = styled.div`
   margin: 20px 0 40px;
 `;
 
+const ToContentLink = styled.a`
+  position: absolute;
+  margin-left: -10000px;
+  padding: 5px 10px;
+  background: white;
+  &:focus {
+    margin-left: 0;
+  }
+`;
+
 export function PageLayout({
   children
 }: {
@@ -15,9 +25,10 @@ export function PageLayout({
   return (
     <>
       <PageContainer as='header'>
+        <ToContentLink href='#main' tabIndex={1}>Skip to content</ToContentLink>
         <Header />
       </PageContainer>
-      <PageContainer as='main'>
+      <PageContainer as='main' id='main'>
         <PageContentWrapper>
           {children}
         </PageContentWrapper>

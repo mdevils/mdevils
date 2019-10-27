@@ -55,12 +55,13 @@ const FilterWrapper = styled.label<{color: string, checked: boolean}>`
   font-weight: 400;
   font-size: 14px;
   margin: 2px 0;
+  transition: opacity 0.2s linear;
   ${({checked}) => checked ? '' : 'opacity: 0.5;'}
 `;
 
 const FilterCheckbox = styled.input`
-  position: absolute;
-  margin-left: -10000px;
+  margin-right: 5px;
+  position: relative;
 `;
 
 const FilterName = styled.span`
@@ -86,7 +87,7 @@ function Filter({
 
   return (
     <>
-      <FilterWrapper color={color} checked={statuses[status]}>
+      <FilterWrapper tabIndex={-1} color={color} checked={statuses[status]}>
         <FilterCheckbox type='checkbox' checked={statuses[status]} onChange={onChange} />
         <FilterName>{name}</FilterName>
       </FilterWrapper>

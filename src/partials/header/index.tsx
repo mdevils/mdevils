@@ -1,3 +1,4 @@
+import {useCallback} from 'react';
 import * as React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import styled from 'styled-components';
@@ -21,7 +22,6 @@ const HeaderWrapper = styled.header`
 
 const Intro = styled.div`
   flex: 1 1 auto;
-  overflow: hidden;
   margin-top: 20px;
   @media (${breakpoints.tablet}) {
     margin-top: 0;
@@ -51,8 +51,16 @@ const SocialText = styled.span`
   font-size: 12px;
 `;
 
+const Email = styled.a`
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 400;
+`;
+
+const email = atob(['bWRldmlsc0B5', 'YW5kZXgucnU='].join(''));
+
 export const Header = withRouter(({location}) => {
-  let firstLink = location.pathname === '/books' ?
+  let firstLink = location.pathname !== '/' ?
     (
       <Link to={'/'}>
         <SocialText>← Home</SocialText>
@@ -63,8 +71,13 @@ export const Header = withRouter(({location}) => {
       </Link>
   );
 
+  const onClick = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.href = `mailto:${email}`;
+  }, []);
+
   return (
-    <HeaderWrapper>
+    <HeaderWrapper aria-label='Brief information about me'>
       <PhotoWrapper>
         <Photo />
       </PhotoWrapper>
@@ -73,6 +86,7 @@ export const Header = withRouter(({location}) => {
         <Info>Engineering Lead at Zalando</Info>
         <Info>Full-Stack Web Developer</Info>
         <Info>Living in Berlin</Info>
+        <Info><Email href='#' onClick={onClick}>{email}</Email></Info>
         <SocialLinks>
           {firstLink}
           &ensp;

@@ -5,6 +5,7 @@ import {filterColors, timelineBarSpacer, timelineGridLineColor, TimelineItemLane
 import {formatDuration, getDurationInMonths} from '../format-duration';
 import {TimelineItemsByEndDate} from '../get-timeline-index';
 import npmIcon from './npm.png';
+import peopleIcon from './people.png';
 
 const TimelineDate = styled.div`
   position: relative;
@@ -18,7 +19,7 @@ const TimelineItemsWrapper = styled.div`
   flex: 1 1 auto;
 `;
 
-const TimelineDateMarker = styled.div`
+const TimelineDateMarker = styled.time`
   background: white;
   margin-left: -140px;
   margin-top: -${9 + timelineBarSpacer/2}px;
@@ -95,8 +96,26 @@ const ItemIcon = styled.div`
   background-size: 100% 100%;
 `;
 
+const ItemPeopleIcon = styled.div`
+  margin-left: 10px;
+  display: inline-block;
+  font-size: 12px;
+  color: #555;
+  &:before {
+    content: '';
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    top: 3px;
+    height: 14px;
+    width: 14px;
+    background: url(${peopleIcon});
+    background-size: 100% 100%;
+  }
+`;
+
 function Item({
-  item: {title, text, id, type, to, from = to, link, video, audio, photo, language, icon},
+  item: {title, text, id, type, to, from = to, link, video, audio, photo, language, icon, team},
   onEnter,
   onLeave,
   hovered
@@ -116,10 +135,13 @@ function Item({
 
   let textContent = (<ItemText>{text}</ItemText>);
   if (language) {
-    textContent = <>{textContent}<ItemLang>{language}</ItemLang></>
+    textContent = <>{textContent}<ItemLang aria-label={'In russian'}>{language}</ItemLang></>
   }
   if (icon) {
-    textContent = <>{textContent}<ItemIcon /></>
+    textContent = <>{textContent}<ItemIcon aria-label={'NPM package'} /></>
+  }
+  if (team) {
+    textContent = <>{textContent}<ItemPeopleIcon>{team} team size</ItemPeopleIcon></>
   }
   if (link) {
     textContent = <ItemTextLink href={link}>{textContent}</ItemTextLink>;
@@ -187,7 +209,7 @@ export function TimelineItems({dates, index, onEnter, onLeave, hoveredId}: {
     <TimelineItemsWrapper>
       {dates.map((date) => (
         <TimelineDate data-date={date} key={date}>
-          <TimelineDateMarker>
+          <TimelineDateMarker dateTime={date} aria-hidden={true}>
             {date.split('-').reverse().join('.')}
           </TimelineDateMarker>
           {(index[date] || []).map((item) => (
