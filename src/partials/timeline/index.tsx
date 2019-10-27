@@ -10,6 +10,7 @@ import {getTimelineIndex} from './get-timeline-index';
 import {getTimelineLaned} from './get-timeline-laned';
 import {TimelineLanes} from './timeline-lanes';
 import {TimelineItems} from './timeline-items';
+import {TimelineSummary} from './timeline-summary';
 
 const filterTimeline = memoizeOne((timeline: TimelineItem[], filter: Filter) => {
   return timeline.filter(({type}) => filter[type]);
@@ -23,6 +24,7 @@ export function Timeline({timeline}: {timeline: TimelineItem[]}) {
     openSource: true
   });
 
+  let filteredTimeline = filterTimeline(timeline, filterStatuses);
   return (
     <>
       <Filters
@@ -31,7 +33,10 @@ export function Timeline({timeline}: {timeline: TimelineItem[]}) {
         statuses={filterStatuses}
         onStatusesChange={setStatuses as any}
       />
-      <TimelineContents timeline={filterTimeline(timeline, filterStatuses)} />
+      <TimelineSummary
+        timeline={filteredTimeline}
+      />
+      <TimelineContents timeline={filteredTimeline} />
     </>
   )
 }

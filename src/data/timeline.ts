@@ -10,7 +10,7 @@ export type TimelineItemSource = {
   text?: string;
   language?: 'RUS';
   icon?: 'npm';
-  programmingLanguages?: string[];
+  work?: string[];
   software?: string[];
   importance?: number;
 }
@@ -23,6 +23,15 @@ const date = new Date();
 const pad = (n: number) => n < 10 ? '0' + n : `${n}`;
 const now = date.getFullYear() + '-' + pad(date.getMonth() + 1);
 
+export const showWorkInTimeline: {[key: string]: boolean} = {
+  'Team leadership': true,
+  'JavaScript': true,
+  'TypeScript': true,
+  'Node.js': true,
+  'React': true,
+  'Redux': true
+};
+
 export const timeline: TimelineItem[] = ([
   {
     type: 'work',
@@ -31,7 +40,7 @@ export const timeline: TimelineItem[] = ([
     link: 'https://life.ru/',
     from: '2004-09',
     to: '2004-12',
-    programmingLanguages: ['C#', 'SQL'],
+    work: ['C#', 'SQL'],
     software: ['WinForms']
   },
   {
@@ -40,7 +49,7 @@ export const timeline: TimelineItem[] = ([
     text: 'Allatravels',
     from: '2005-11',
     to: '2008-01',
-    programmingLanguages: ['C#', 'SQL'],
+    work: ['C#', 'SQL'],
     software: ['ASP.NET']
   },
   {
@@ -49,7 +58,7 @@ export const timeline: TimelineItem[] = ([
     text: 'Alezar',
     from: '2006-01',
     to: '2006-07',
-    programmingLanguages: ['PHP', 'SQL']
+    work: ['PHP', 'SQL']
   },
   {
     type: 'work',
@@ -57,7 +66,7 @@ export const timeline: TimelineItem[] = ([
     text: 'ILEAD',
     from: '2007-09',
     to: '2008-01',
-    programmingLanguages: ['C#', 'PHP', 'JavaScript', 'SQL'],
+    work: ['C#', 'PHP', 'JavaScript', 'SQL'],
     software: ['ASP.NET']
   },
   {
@@ -67,7 +76,7 @@ export const timeline: TimelineItem[] = ([
     link: 'http://npoanna.ru/',
     from: '2005-07',
     to: '2008-02',
-    programmingLanguages: ['C#', 'JavaScript'],
+    work: ['C#'],
     software: ['ASP.NET']
   },
   {
@@ -77,7 +86,7 @@ export const timeline: TimelineItem[] = ([
     link: 'https://habr.com/',
     from: '2008-06',
     to: '2008-11',
-    programmingLanguages: ['JavaScript'],
+    work: ['JavaScript'],
     software: ['jQuery']
   },
   {
@@ -87,7 +96,7 @@ export const timeline: TimelineItem[] = ([
     link: 'https://yandex.com/maps',
     from: '2008-12',
     to: '2011-02',
-    programmingLanguages: ['JavaScript'],
+    work: ['JavaScript'],
     software: ['jQuery']
   },
   {
@@ -97,7 +106,7 @@ export const timeline: TimelineItem[] = ([
     link: 'https://www.gurnick.edu/',
     from: '2011-02',
     to: '2012-09',
-    programmingLanguages: ['PHP', 'JavaScript', 'SQL'],
+    work: ['PHP', 'JavaScript', 'SQL'],
     software: ['jQuery']
   },
   {
@@ -107,8 +116,7 @@ export const timeline: TimelineItem[] = ([
     link: 'https://yandex.com/maps',
     from: '2012-09',
     to: '2014-03',
-    programmingLanguages: ['JavaScript'],
-    software: ['BEM', 'Node.js']
+    work: ['JavaScript', 'BEM', 'Node.js']
   },
   {
     type: 'work',
@@ -117,8 +125,7 @@ export const timeline: TimelineItem[] = ([
     link: 'https://yandex.com/maps',
     from: '2014-03',
     to: '2015-03',
-    programmingLanguages: ['JavaScript'],
-    software: ['BEM', 'Node.js']
+    work: ['Team leadership', 'JavaScript', 'BEM', 'Node.js']
   },
   {
     type: 'work',
@@ -127,8 +134,7 @@ export const timeline: TimelineItem[] = ([
     link: 'https://matterway.io/',
     from: '2015-04',
     to: '2015-10',
-    programmingLanguages: ['JavaScript'],
-    software: ['Node.js', 'React', 'Redux']
+    work: ['JavaScript', 'Node.js', 'React', 'Redux']
   },
   {
     type: 'work',
@@ -137,8 +143,7 @@ export const timeline: TimelineItem[] = ([
     link: 'https://matterway.io/',
     from: '2015-10',
     to: '2019-05',
-    programmingLanguages: ['JavaScript', 'TypeScript'],
-    software: ['Node.js', 'React', 'Redux']
+    work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux']
   },
   {
     type: 'work',
@@ -147,8 +152,7 @@ export const timeline: TimelineItem[] = ([
     link: 'https://www.zalando-lounge.com/',
     from: '2019-07',
     to: now,
-    programmingLanguages: ['JavaScript', 'TypeScript'],
-    software: ['Node.js', 'React', 'Redux']
+    work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux']
   },
   {
     type: 'education',
@@ -162,10 +166,7 @@ export const timeline: TimelineItem[] = ([
     text: 'Plekhanov Russian University of Economics',
     link: 'https://www.rea.ru/en/Pages/default.aspx',
     from: '2004-09',
-    to: '2009-06',
-    programmingLanguages: [
-      'C', 'HTML', 'CSS', 'JS', 'VB'
-    ]
+    to: '2009-06'
   },
   {
     type: 'education',

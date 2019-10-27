@@ -2,7 +2,7 @@ import {useCallback} from 'react';
 import * as React from 'react';
 import styled from 'styled-components';
 import {filterColors, timelineBarSpacer, timelineGridLineColor, TimelineItemLaned, TimelineItemType} from '../const';
-import {formatDuration} from '../format-duration';
+import {formatDuration, getDurationInMonths} from '../format-duration';
 import {TimelineItemsByEndDate} from '../get-timeline-index';
 import npmIcon from './npm.png';
 
@@ -110,7 +110,7 @@ function Item({
   const duration = from !== to ? (
     <ItemDuration type={type}>
       {' '}
-      {formatDuration(from, to)}
+      {formatDuration(getDurationInMonths(from, to))}
     </ItemDuration>
   ): null;
 
