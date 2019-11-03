@@ -12,6 +12,7 @@ const PhotoWrapper = styled.div`
 `;
 
 const HeaderWrapper = styled.header`
+  position: relative;
   margin: 20px 0 0 0;
   @media (${breakpoints.tablet}) {
     display: flex;
@@ -21,7 +22,7 @@ const HeaderWrapper = styled.header`
 `;
 
 const Intro = styled.div`
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   margin-top: 20px;
   @media (${breakpoints.tablet}) {
     margin-top: 0;
@@ -37,10 +38,18 @@ const Name = styled.h1`
 
 const Info = styled.div`
   font-weight: 300;
+  margin-right: 20px;
 `;
 
 const SocialLinks = styled.div`
-  margin: 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 170px;
+  @media (${breakpoints.tablet}) {
+    position: static;
+  }
 `;
 
 const Social = styled.a``;
@@ -48,7 +57,7 @@ const Social = styled.a``;
 const SocialText = styled.span`
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 10px;
 `;
 
 const Email = styled.a`
@@ -57,19 +66,23 @@ const Email = styled.a`
   font-weight: 400;
 `;
 
+const Menu = styled.nav`
+  list-style: none;
+  margin: 10px 0 0;
+`;
+const MenuItem = styled.li`
+  display: inline-block;
+  margin-right: 10px;
+`;
+const MenuItemText = styled.span`
+  text-transform: uppercase;
+  font-size: 12px;
+`;
+
 const email = atob(['bWRldmlsc0B5', 'YW5kZXgucnU='].join(''));
 
 export const Header = withRouter(({location}) => {
-  let firstLink = location.pathname !== '/' ?
-    (
-      <Link to={'/'}>
-        <SocialText>← Home</SocialText>
-      </Link>
-    ) : (
-      <Link to={'/books'}>
-        <SocialText>My Books</SocialText>
-      </Link>
-  );
+  const path = location.pathname;
 
   const onClick = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
@@ -85,20 +98,38 @@ export const Header = withRouter(({location}) => {
         <Name>Marat Dulin</Name>
         <Info>Engineering Lead at Zalando</Info>
         <Info>Full-Stack Web Developer</Info>
-        <Info>Living in Berlin</Info>
+        <Info>Located in Berlin</Info>
         <Info><Email href='#' onClick={onClick}>{email}</Email></Info>
-        <SocialLinks>
-          {firstLink}
-          &ensp;
-          <Social href='https://github.com/mdevils'><SocialText>github</SocialText></Social>
-          &ensp;
-          <Social href='https://www.linkedin.com/in/maratdulin/'><SocialText>linkedin</SocialText></Social>
-          &ensp;
-          <Social href='https://www.facebook.com/max.devils'><SocialText>facebook</SocialText></Social>
-          &ensp;
-          <Social href='https://twitter.com/mdevils'><SocialText>twitter</SocialText></Social>
-        </SocialLinks>
+        <Menu>
+          {path !== '/' && (
+            <MenuItem>
+              <Link to={'/'}>
+                <MenuItemText>← Home</MenuItemText>
+              </Link>
+            </MenuItem>
+          )}
+          {path !== '/books' && (
+            <MenuItem>
+              <Link to={'/books'}>
+                <MenuItemText>My Books</MenuItemText>
+              </Link>
+            </MenuItem>
+          )}
+          {path !== '/projects' && (
+            <MenuItem>
+              <Link to={'/projects'}>
+                <MenuItemText>Projects</MenuItemText>
+              </Link>
+            </MenuItem>
+          )}
+        </Menu>
       </Intro>
+      <SocialLinks>
+        <Social href='https://github.com/mdevils'><SocialText>github</SocialText></Social>
+        <Social href='https://www.linkedin.com/in/maratdulin/'><SocialText>linkedin</SocialText></Social>
+        <Social href='https://www.facebook.com/max.devils'><SocialText>facebook</SocialText></Social>
+        <Social href='https://twitter.com/mdevils'><SocialText>twitter</SocialText></Social>
+      </SocialLinks>
     </HeaderWrapper>
   );
 });

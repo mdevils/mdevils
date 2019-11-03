@@ -135,13 +135,13 @@ function Item({
 
   let textContent = (<ItemText>{text}</ItemText>);
   if (language) {
-    textContent = <>{textContent}<ItemLang aria-label={'In russian'}>{language}</ItemLang></>
+    textContent = <>{textContent}<ItemLang aria-label='In russian'>{language}</ItemLang></>
   }
   if (icon) {
-    textContent = <>{textContent}<ItemIcon aria-label={'NPM package'} /></>
+    textContent = <>{textContent}<ItemIcon aria-label='NPM package' /></>
   }
   if (team) {
-    textContent = <>{textContent}<ItemPeopleIcon>{team} team size</ItemPeopleIcon></>
+    textContent = <>{textContent}<ItemPeopleIcon>{team} members team</ItemPeopleIcon></>
   }
   if (link) {
     textContent = <ItemTextLink href={link}>{textContent}</ItemTextLink>;
