@@ -9,6 +9,9 @@ const PhotoWrapper = styled.div`
   width: 150px;
   margin-right: 20px;
   flex: 0 0 auto;
+  @media {
+    width: 120px;
+  }
 `;
 
 const HeaderWrapper = styled.header`
@@ -46,18 +49,48 @@ const SocialLinks = styled.div`
   flex-direction: column;
   position: absolute;
   top: 0;
+  margin-top: 0;
   left: 170px;
   @media (${breakpoints.tablet}) {
     position: static;
+    margin-left: 10px;
+    @media print {
+      margin-top: 17px;
+    }
   }
 `;
 
-const Social = styled.a``;
+function Social({href, children}: {href: string, children: string}) {
+  return (
+    <SocialWrapper href={href}>
+      <SocialScreenText>{children}</SocialScreenText>
+      <SocialPrintText>{href.replace(/(^https?:\/\/(?:www\.)?|\/$)/g, '')}</SocialPrintText>
+    </SocialWrapper>
+  );
+}
 
-const SocialText = styled.span`
+const SocialWrapper = styled.a`
+  & + & {
+    @media print {
+      margin-top: 2px;
+    }
+  }
+`;
+
+const SocialScreenText = styled.span`
   font-weight: 500;
   text-transform: uppercase;
   font-size: 10px;
+  @media print {
+    display: none;
+  }
+`;
+
+const SocialPrintText = styled.span`
+  font-size: 12px;
+  @media screen {
+    display: none;
+  }
 `;
 
 const Email = styled.a`
@@ -69,6 +102,9 @@ const Email = styled.a`
 const Menu = styled.nav`
   list-style: none;
   margin: 10px 0 0;
+  @media print {
+    display: none;
+  }
 `;
 const MenuItem = styled.li`
   display: inline-block;
@@ -125,10 +161,15 @@ export const Header = withRouter(({location}) => {
         </Menu>
       </Intro>
       <SocialLinks>
-        <Social href='https://github.com/mdevils'><SocialText>github</SocialText></Social>
-        <Social href='https://www.linkedin.com/in/maratdulin/'><SocialText>linkedin</SocialText></Social>
-        <Social href='https://www.facebook.com/max.devils'><SocialText>facebook</SocialText></Social>
-        <Social href='https://twitter.com/mdevils'><SocialText>twitter</SocialText></Social>
+        <Social href='https://github.com/mdevils'>
+          github
+        </Social>
+        <Social href='https://www.linkedin.com/in/maratdulin/'>
+          linkedin
+        </Social>
+        <Social href='https://twitter.com/mdevils'>
+          twitter
+        </Social>
       </SocialLinks>
     </HeaderWrapper>
   );

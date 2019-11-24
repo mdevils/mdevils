@@ -101,6 +101,9 @@ const LanesWrapper = styled.div`
   &::after {
     right: -2px;
   }
+  @media print {
+    display: none;
+  }
 `;
 const LaneWrapper = styled.div`
   margin-left: ${timelineBarMargin}px;

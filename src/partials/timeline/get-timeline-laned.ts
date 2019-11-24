@@ -11,7 +11,7 @@ function isIntersecting(a: {from: string, to: string}, b: {from: string, to: str
   return isInRange(a.from, b) || isInRange(a.to, b) || isInRange(b.from, a) || isInRange(b.to, a);
 }
 
-export const getTimelineLaned = memoizeOne((timeline: TimelineItem[]): {
+export const getTimelineLanedUncached = (timeline: TimelineItem[]): {
   items: TimelineItemLaned[],
   lanes: Lanes
 } => {
@@ -54,4 +54,6 @@ export const getTimelineLaned = memoizeOne((timeline: TimelineItem[]): {
   }
   lanes.reverse();
   return {items, lanes};
-});
+};
+
+export const getTimelineLaned = memoizeOne(getTimelineLanedUncached);

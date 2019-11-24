@@ -44,3 +44,7 @@ export function formatDuration(duration: number, includeMonths = true) {
   }
   return result.join(', ');
 }
+
+export function formatDate(date: string): string {
+  return date.split('-').reverse().join('.');
+}

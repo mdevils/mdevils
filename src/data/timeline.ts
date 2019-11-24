@@ -1,6 +1,7 @@
 export type TimelineItemSource = {
   type: 'work' | 'openSource' | 'education' | 'public';
   title: string;
+  points?: string[];
   link?: string;
   video?: string;
   audio?: string;
@@ -14,6 +15,7 @@ export type TimelineItemSource = {
   software?: string[];
   importance?: number;
   team?: number;
+  hideFromPrintVersion?: boolean;
 }
 
 export type TimelineItem = TimelineItemSource & {
@@ -98,7 +100,12 @@ export const timeline: TimelineItem[] = ([
     from: '2008-12',
     to: '2011-02',
     work: ['JavaScript'],
-    software: ['jQuery']
+    software: ['jQuery'],
+    points: [
+      'Working on JavaScript API to make it friendly and easy to use for our users.',
+      'Creating and developing Maps UI, keeping full cross-browser compatibility.',
+      'Designing the architecture of the new major API version.'
+    ]
   },
   {
     type: 'work',
@@ -108,7 +115,15 @@ export const timeline: TimelineItem[] = ([
     from: '2011-02',
     to: '2012-09',
     work: ['PHP', 'JavaScript', 'SQL'],
-    software: ['jQuery']
+    software: ['jQuery'],
+    points: [
+      'Designing flexible and high-performing architecture.',
+      'Developing and maintaining high-performing backend using PHP5.',
+      'Creating and maintaining responsible UI (JavaScript, HTML5, CSS3).',
+      'Optimising database workflows, database performance (MySQL).',
+      'Covering the projects with unit-tests. Maintaining high coverage level.',
+      'Working with the other developers, providing support.'
+    ]
   },
   {
     type: 'work',
@@ -117,7 +132,14 @@ export const timeline: TimelineItem[] = ([
     link: 'https://yandex.com/maps',
     from: '2012-09',
     to: '2014-03',
-    work: ['JavaScript', 'BEM', 'Node.js']
+    work: ['JavaScript', 'BEM', 'Node.js'],
+    points: [
+      'Designing the core architecture.',
+      'Developing frontend applications (JavaScript, BEM).',
+      'Creating server-side for the project using Node.js.',
+      'Developing required Maps UI features with full cross-browser compatibility.',
+      'Covering with unit-tests. Maintaining high coverage level.'
+    ]
   },
   {
     type: 'work',
@@ -127,6 +149,14 @@ export const timeline: TimelineItem[] = ([
     from: '2014-03',
     to: '2015-03',
     work: ['Team leadership', 'JavaScript', 'BEM', 'Node.js'],
+    points: [
+      'Leading the Yandex.Maps Frontend team.',
+      'Planning architecture changes, refactoring.',
+      'Developing Maps service frontend (JavaScript, BEM).',
+      'Building learning trajectory for each team member.',
+      'Creating server-side for the project using Node.js.',
+      'Developing required Maps UI features with full cross-browser compatibility.'
+    ],
     team: 5
   },
   {
@@ -136,7 +166,14 @@ export const timeline: TimelineItem[] = ([
     link: 'https://matterway.io/',
     from: '2015-04',
     to: '2015-10',
-    work: ['JavaScript', 'Node.js', 'React', 'Redux']
+    work: ['JavaScript', 'Node.js', 'React', 'Redux'],
+    points: [
+      'Designing the core architecture.',
+      'Developing Electron-based React and Redux application.',
+      'Developing ReactNative application.',
+      'Creating server-side for the project using Node.js.',
+      'Covering with unit-tests. Maintaining high coverage level.'
+    ]
   },
   {
     type: 'work',
@@ -146,6 +183,22 @@ export const timeline: TimelineItem[] = ([
     from: '2015-10',
     to: '2019-05',
     work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux'],
+    points: [
+      'Leading the Engineering Team consisting of developers and QAs.',
+      'Designing the core architecture, deciding on upgrades and refactoring.',
+      'Deciding on product roadmap along with product owner and company founders.',
+      'Defining team development culture and principles.',
+      'Developing Electron-based React and Redux applications (TypeScript).',
+      'Developing ReactNative applications (TypeScript).',
+      'Helping team members to develop their skills, arranging external learning.',
+      'Establishing and managing agile development and release process.',
+      'Hiring the whole team, organising hiring process, preparing challenges and questionnaires.',
+      'Promoting new technologies and approaches, organising knowledge sharing processes.',
+      'Maintaining high quality of source code and infrastructure.',
+      'Optimising in-team and cross-team processes.',
+      'Continuous integration: releases, unit tests, integration tests, test coverage monitoring.',
+      'Backend infrastructure using Docker containers, aggregated server status monitoring.'
+    ],
     team: 5
   },
   {
@@ -156,13 +209,23 @@ export const timeline: TimelineItem[] = ([
     from: '2019-07',
     to: now,
     work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux'],
+    points: [
+      'Defining team development culture and principles.',
+      'Helping team members to develop their skills, arranging learning and trainings.',
+      'Organising team workshops to help team members to get on the same level.',
+      'Hiring new developers for the team.',
+      'Supporting high quality of source code and infrastructure.',
+      'Optimising in-team and cross-team processes.',
+      'Participating in department-level decisions and initiatives.'
+    ],
     team: 10
   },
   {
     type: 'education',
     title: 'Graduated school',
     from: '1993-09',
-    to: '2004-06'
+    to: '2004-06',
+    hideFromPrintVersion: true
   },
   {
     type: 'education',
@@ -178,14 +241,16 @@ export const timeline: TimelineItem[] = ([
     text: 'A2 → B2 level',
     link: 'https://www.das-akademie.de/en/',
     from: '2016-06',
-    to: '2017-06'
+    to: '2017-06',
+    hideFromPrintVersion: true
   },
   {
     type: 'education',
     title: 'English courses',
     text: 'Beginner → Advanced level',
     from: '2000-07',
-    to: '2004-05'
+    to: '2004-05',
+    hideFromPrintVersion: true
   },
   {
     type: 'education',
@@ -198,7 +263,8 @@ export const timeline: TimelineItem[] = ([
     title: 'German courses',
     text: 'C1 level',
     from: '2019-08',
-    to: '2019-10'
+    to: '2019-10',
+    hideFromPrintVersion: true
   },
   {
     type: 'openSource',
@@ -251,7 +317,7 @@ export const timeline: TimelineItem[] = ([
   {
     type: 'public',
     title: 'Talk: "Developing component libraries"',
-    text: 'Yandex Conference',
+    text: 'Yandex Conference in Moscow, Russia',
     video: 'https://video.yandex.ru/users/ya-events/view/1788/',
     language: 'RUS',
     to: '2013-10'
@@ -259,7 +325,7 @@ export const timeline: TimelineItem[] = ([
   {
     type: 'public',
     title: 'Talk: "ENB: BEM project assembler"',
-    text: 'BEMup',
+    text: 'BEMup in Moscow, Russia',
     video: 'https://events.yandex.ru/events/bemup/2-october-2013/?openTalkVideo=297-3',
     language: 'RUS',
     to: '2013-10'
@@ -267,7 +333,7 @@ export const timeline: TimelineItem[] = ([
   {
     type: 'public',
     title: 'Talk: "JSCS: Developing OpenSource architecture"',
-    text: 'Talk in Rostov-on-Don, JS Meetup',
+    text: 'JS Meetup in Rostov-on-Don, Russia',
     link: 'https://www.facebook.com/events/562939683813604/',
     video: 'https://www.youtube.com/watch?v=VpKIiwYR-n0',
     language: 'RUS',
@@ -275,8 +341,8 @@ export const timeline: TimelineItem[] = ([
   },
   {
     type: 'public',
-    title: 'Talk: "BEViS & BT"',
-    text: 'Talk on CodeFest with Vadim Makishvili',
+    title: 'Talk: "BEViS & BT" with Vadim Makishvili',
+    text: 'CodeFest in Novosibirsk, Russia',
     link: 'https://2014.codefest.ru/lecture/790',
     video: 'https://www.youtube.com/watch?v=4qh6ko8jNKc',
     language: 'RUS',
@@ -284,8 +350,8 @@ export const timeline: TimelineItem[] = ([
   },
   {
     type: 'public',
-    title: 'Talk: "BEViS & BT"',
-    text: 'Talk on RIT++ with Vadim Makishvili',
+    title: 'Talk: "BEViS & BT" with Vadim Makishvili',
+    text: 'RIT++ in Moscow, Russia',
     link: 'https://www.kp.ru/daily/26216.5/3100206/',
     language: 'RUS',
     to: '2014-04'
@@ -293,7 +359,7 @@ export const timeline: TimelineItem[] = ([
   {
     type: 'public',
     title: 'Podcast interview: "JSCS, BEViS, Leadership"',
-    text: 'Radio JS, #25',
+    text: 'Radio JS in Berlin, Germany',
     link: 'https://radiojs.ru/2015/06/radiojs-25/',
     audio: 'https://www.youtube.com/watch?v=VpKIiwYR-n0',
     language: 'RUS',
@@ -302,7 +368,7 @@ export const timeline: TimelineItem[] = ([
   {
     type: 'public',
     title: 'Talk: "JSCS: JavaScript Code Style checker"',
-    text: 'Fullstack.JS Berlin',
+    text: 'Fullstack.JS in Berlin, Germany',
     link: 'https://www.meetup.com/fullstack-berlin/events/226856447/',
     photo: 'https://twitter.com/_andreasgrimm/status/672500021233885184',
     to: '2015-12'

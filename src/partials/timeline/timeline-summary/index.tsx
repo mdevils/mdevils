@@ -43,10 +43,12 @@ const TimelineSymmaryItemList = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 480px;
   margin: 0;
   padding: 0;
   list-style: none;
+  @media screen {
+    max-width: 480px;
+  }
 `;
 const TimelineSymmaryItem = styled.li`
   flex: 0 0 50%;
@@ -54,6 +56,11 @@ const TimelineSymmaryItem = styled.li`
   font-size: 16px;
   margin: 6px 0 0;
   padding: 0;
+  @media print {
+    font-size: 14px;
+    margin: 3px 0 0;
+    flex: 0 0 33%;
+  }
 `;
 const TimelineSymmaryItemTerm = styled.span`
   margin-right: 6px;

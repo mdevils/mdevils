@@ -66,9 +66,9 @@ export const projects: Project[] = [
     title: 'ENB',
     text: (
       'BEM-based project bundler (like Webpack). Was created in order to ' +
-      'improve BEM-based project build performance. For huge projects the ' +
-      'performance was improved from 20 minutes to 15 seconds for a full ' +
-      'rebuild. Still used in Yandex for building many of the frontend projects.'
+      'improve build performance (compared to previous builder). For huge projects the ' +
+      'performance was improved from 20 minutes to 15 seconds for a full rebuild. ' +
+      'Still used in Yandex for building many of the frontend projects.'
     ),
     technologies: ['JavaScript', 'Node.js'],
     challenges: [

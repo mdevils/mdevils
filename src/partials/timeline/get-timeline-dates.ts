@@ -9,7 +9,7 @@ function uniq(arr: string[]): string[] {
   return Object.keys(index);
 }
 
-export const getTimelineDates = memoizeOne((timeline: TimelineItem[]) => {
+export const getTimelineDatesUncached = (timeline: TimelineItem[]) => {
   const result: string[] = [];
   for (let item of timeline) {
     result.push(item.to);
@@ -18,4 +18,6 @@ export const getTimelineDates = memoizeOne((timeline: TimelineItem[]) => {
     }
   }
   return uniq(result).sort(compareDateDesc);
-});
+};
+
+export const getTimelineDates = memoizeOne(getTimelineDatesUncached);

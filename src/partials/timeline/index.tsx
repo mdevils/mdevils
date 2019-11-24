@@ -16,7 +16,11 @@ const filterTimeline = memoizeOne((timeline: TimelineItem[], filter: Filter) => 
   return timeline.filter(({type}) => filter[type]);
 });
 
-const FilterWrapper = styled.section``;
+const FilterWrapper = styled.section`
+  @media print {
+    display: none;
+  }
+`;
 
 export function Timeline({timeline}: {timeline: TimelineItem[]}) {
   const [filterStatuses, setStatuses] = useState<Filter>({
@@ -48,12 +52,14 @@ export function Timeline({timeline}: {timeline: TimelineItem[]}) {
 const TimelineContentsWrapper = styled.section`
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 50px;
   display: flex;
   flex-direction: row;
   align-items: stretch;
   position: relative;
-  padding-left: 50px;
+  @media print {
+    display: none;
+  }
 `;
 
 
