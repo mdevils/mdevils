@@ -229,7 +229,7 @@ export const timeline: TimelineItem[] = ([
   },
   {
     type: 'education',
-    title: 'Graduated from University',
+    title: 'Bachelor of Information Technology in Economics',
     text: 'Plekhanov Russian University of Economics',
     link: 'https://www.rea.ru/en/Pages/default.aspx',
     from: '2004-09',

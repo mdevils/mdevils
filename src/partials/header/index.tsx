@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import {Photo} from '../../pages/home-page/photo';
 import {breakpoints} from '../../tokens/breakpoints';
 
+const phoneNumber = atob(['I2NTkxMQ==', 'E1MiAzNj', 'KzQ5ID'].reverse().join(''));
+
 const PhotoWrapper = styled.div`
   width: 150px;
   margin-right: 20px;
@@ -57,6 +59,14 @@ const SocialLinks = styled.div`
     @media print {
       margin-top: 17px;
     }
+  }
+`;
+
+const PhoneNumber = styled.div`
+  @media screen {
+    font-size: 14px;
+    font-weight: 300;
+    display: none;
   }
 `;
 
@@ -161,6 +171,9 @@ export const Header = withRouter(({location}) => {
         </Menu>
       </Intro>
       <SocialLinks>
+        <PhoneNumber>
+          {phoneNumber}
+        </PhoneNumber>
         <Social href='https://github.com/mdevils'>
           github
         </Social>
