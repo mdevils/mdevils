@@ -59,7 +59,8 @@ const TimelineSymmaryItem = styled.li`
   @media print {
     font-size: 14px;
     margin: 3px 0 0;
-    flex: 0 0 33%;
+    flex: 0 0 25%;
+    min-width: 180px;
   }
 `;
 const TimelineSymmaryItemTerm = styled.span`

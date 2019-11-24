@@ -57,15 +57,15 @@ const SocialLinks = styled.div`
     position: static;
     margin-left: 10px;
     @media print {
-      margin-top: 17px;
+      margin-top: 36px;
+      margin-left: 50px;
     }
   }
 `;
 
 const PhoneNumber = styled.div`
+  font-size: 14px;
   @media screen {
-    font-size: 14px;
-    font-weight: 300;
     display: none;
   }
 `;
