@@ -207,7 +207,7 @@ export const timeline: TimelineItem[] = ([
     text: 'Zalando Lounge',
     link: 'https://www.zalando-lounge.com/',
     from: '2019-07',
-    to: now,
+    to: '2019-12',
     work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux'],
     points: [
       'Defining team development culture and principles.',
