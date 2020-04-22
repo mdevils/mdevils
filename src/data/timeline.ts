@@ -221,6 +221,20 @@ export const timeline: TimelineItem[] = ([
     team: 10
   },
   {
+    type: 'work',
+    title: 'Frontend Lead',
+    text: 'ARRIVAL',
+    link: 'https://www.arrival.com/',
+    from: '2020-04',
+    to: now,
+    work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux'],
+    points: [
+      'Defining team development culture and principles.',
+      'Hiring new developers for the team.',
+      'Supporting high quality of source code and infrastructure.'
+    ]
+  },
+  {
     type: 'education',
     title: 'Graduated school',
     from: '1993-09',

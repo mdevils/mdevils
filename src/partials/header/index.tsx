@@ -142,7 +142,7 @@ export const Header = withRouter(({location}) => {
       </PhotoWrapper>
       <Intro>
         <Name>Marat Dulin</Name>
-        <Info>Engineering Lead</Info>
+        <Info>Frontend Lead</Info>
         <Info>Full-Stack Web Developer</Info>
         <Info>Located in Berlin</Info>
         <Info><Email href='#' onClick={onClick}>{email}</Email></Info>
