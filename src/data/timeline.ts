@@ -294,7 +294,7 @@ export const timeline: TimelineItem[] = ([
     title: 'TypeScript Exercises',
     text: 'A set of interactive TypeScript exercises',
     link: 'https://typescript-exercises.github.io/',
-    from: '2019-04',
+    from: '2020-04',
     to: now
   },
   {
