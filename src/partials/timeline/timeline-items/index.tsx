@@ -40,6 +40,7 @@ const TimelineDateMarker = styled.time`
   }
 `;
 
+// eslint-disable-next-line no-unexpected-multiline
 const ItemWrapper = styled.div<{
   type: TimelineItemType,
   hovered: boolean,

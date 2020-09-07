@@ -291,6 +291,14 @@ export const timeline: TimelineItem[] = ([
   },
   {
     type: 'openSource',
+    title: 'TypeScript Exercises',
+    text: 'A set of interactive TypeScript exercises',
+    link: 'https://typescript-exercises.github.io/',
+    from: '2019-04',
+    to: now
+  },
+  {
+    type: 'openSource',
     title: 'JSCS',
     text: 'JavaScript CodeStyle checker',
     link: 'https://jscs-dev.github.io/',
