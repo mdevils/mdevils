@@ -227,11 +227,19 @@ export const timeline: TimelineItem[] = ([
     link: 'https://www.arrival.com/',
     from: '2020-04',
     to: now,
-    work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux'],
+    work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux', 'GraphQL'],
     points: [
+      'Leading the Engineering Team consisting of developers and QAs.',
+      'Designing the core architecture, deciding on upgrades and refactoring.',
+      'Deciding on product roadmap along with product manager.',
+      'Hiring all the developers for the team.',
       'Defining team development culture and principles.',
-      'Hiring new developers for the team.',
-      'Supporting high quality of source code and infrastructure.'
+      'Developing multiple Full-Stack Applications using TypeScript, React, node.js and GraphQL.',
+      'Supporting high quality of source code and infrastructure.',
+      'Continuous integration: releases, unit tests, integration tests.',
+      'Creating and maintaining company-wide UI library.',
+      'Establishing and managing agile development and release process.',
+      'Helping team members to develop their skills, arranging external learning.'
     ]
   },
   {
