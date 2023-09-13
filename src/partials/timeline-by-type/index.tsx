@@ -43,19 +43,27 @@ const TimelineByTypeWrapper = styled.div`
     display: block;
   }
 `;
-const TimelineByTypeSectionWrapper = styled.section``;
+const TimelineByTypeSectionWrapper = styled.section<{printTogether: boolean}>`
+  ${({printTogether}) => printTogether ? 'page-break-inside: avoid;' : ''}
+`;
 const noop = () => null;
 
 const HeadingWrapper = styled.div`
   margin: -95px 0 10px;
 `;
 
+const printTogetherTypes = ['education', 'openSource', 'public'];
+
 export function TimelineByType({timeline}: {timeline: TimelineItem[]}) {
   const timelineByType = groupTimelineByType(timeline);
   return (
     <TimelineByTypeWrapper>
       {(Object.keys(timelineByType) as TimelineItemType[]).map((type) => (
-        <TimelineByTypeSectionWrapper aria-labelledby={`print-section-${type}`} key={type}>
+        <TimelineByTypeSectionWrapper
+            aria-labelledby={`print-section-${type}`}
+            key={type}
+            printTogether={printTogetherTypes.includes(type)}
+        >
           <PrintLayer />
           <HeadingWrapper>
             <Heading>{filterNames[type]}</Heading>

@@ -125,7 +125,7 @@ const MenuItemText = styled.span`
   font-size: 12px;
 `;
 
-const email = atob(['bWRldmlsc0B5', 'YW5kZXgucnU='].join(''));
+const email = atob(['bWRldmlsc0Bn', 'bWFpbC5jb20='].join(''));
 
 export const Header = withRouter(({location}) => {
   const path = location.pathname;
