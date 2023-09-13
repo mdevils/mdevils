@@ -322,7 +322,7 @@ export const timeline: TimelineItem[] = ([
     icon: 'npm',
     importance: 2,
     from: '2013-02',
-    to: '2019-08'
+    to: now
   },
   {
     type: 'openSource',
@@ -332,7 +332,7 @@ export const timeline: TimelineItem[] = ([
     icon: 'npm',
     importance: 2,
     from: '2013-02',
-    to: '2016-11'
+    to: now
   },
   {
     type: 'openSource',
