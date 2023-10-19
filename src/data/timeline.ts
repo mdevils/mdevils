@@ -240,7 +240,8 @@ export const timeline: TimelineItem[] = ([
       'Creating and maintaining company-wide UI library.',
       'Establishing and managing agile development and release process.',
       'Helping team members to develop their skills, arranging external learning.'
-    ]
+    ],
+    team: 6
   },
   {
     type: 'education',
