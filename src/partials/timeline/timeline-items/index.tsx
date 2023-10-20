@@ -6,8 +6,9 @@ import {formatDate, formatDuration, getDurationInMonths} from '../format-duratio
 import {TimelineItemsByEndDate} from '../get-timeline-index';
 import npmIcon from './npm.png';
 import peopleIcon from './people.png';
+import {now, onlyTimelineWork} from '../../../data/timeline';
 
-const TimelineDate = styled.div<{hideFromPrintVersion: boolean}>`
+const TimelineDate = styled.div<{hideFromPrintVersion: boolean; hideFromTabletVersion: boolean}>`
   position: relative;
   min-height: 1px;
   @media screen {
@@ -17,7 +18,10 @@ const TimelineDate = styled.div<{hideFromPrintVersion: boolean}>`
   }
   page-break-inside: avoid;
   @media print {
-    ${({hideFromPrintVersion}) => hideFromPrintVersion ? 'display: none;' : ''}
+    ${({hideFromPrintVersion}) => hideFromPrintVersion && 'display: none;'}
+  }
+  @media (max-width: 768px) {
+    ${({hideFromTabletVersion}) => hideFromTabletVersion && 'display: none;'}
   }
 `;
 
@@ -30,12 +34,15 @@ const TimelineDateMarker = styled.time`
   margin-left: -140px;
   margin-top: -${9 + timelineBarSpacer/2}px;
   border-bottom: 1px ${timelineGridLineColor} solid;
-  font-size: 10px;
+  font-size: 0.625em;
   width: 105px;
   position: absolute;
   z-index: 0;
   top: 50%;
   @media print {
+    display: none;
+  }
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -70,7 +77,6 @@ const ItemWrapper = styled.div<{
 
 const ItemTitle = styled.span`
   font-weight: 500;
-  font-size: 16px;
   @media screen {
     margin-right: 10px;
   }
@@ -79,7 +85,7 @@ const ItemTitle = styled.span`
   }
 `;
 const ItemText = styled.span`
-  font-size: 14px;
+  font-size: 0.875em;
 `;
 const ItemTextLink = styled.a`
   @media print {
@@ -87,13 +93,13 @@ const ItemTextLink = styled.a`
   }
 `;
 const ItemVideoLink = styled.a`
-  font-size: 14px;
+  font-size: 0.875em;
 `;
 const ItemAudioLink = styled.a`
-  font-size: 14px;
+  font-size: 0.875em;
 `;
 const ItemPhotoLink = styled.a`
-  font-size: 14px;
+  font-size: 0.875em;
 `;
 const ItemLineWrapper = styled.div<{screen?: boolean}>`
   ${({screen}) => screen ? '@media print { display: none; }' : ''}
@@ -101,7 +107,7 @@ const ItemLineWrapper = styled.div<{screen?: boolean}>`
 
 const ItemHeader = styled.div``;
 const ItemDuration = styled.span<{type: TimelineItemType}>`
-  font-size: 14px;
+  font-size: 0.875em;
   color: #555;
   white-space: nowrap;
   @media print {
@@ -109,7 +115,7 @@ const ItemDuration = styled.span<{type: TimelineItemType}>`
   }
 `;
 const ItemPrintDuration = styled.span`
-  font-size: 14px;
+  font-size: 0.875em;
   color: #555;
   white-space: nowrap;
   @media screen {
@@ -117,7 +123,7 @@ const ItemPrintDuration = styled.span`
   }
 `;
 const ItemShortInfoPrint = styled.span`
-  font-size: 14px;
+  font-size: 0.875em;
   margin-right: 10px;
   @media screen {
     display: none;
@@ -126,7 +132,7 @@ const ItemShortInfoPrint = styled.span`
 
 const ItemLang = styled.div`
   font-weight: 500;
-  font-size: 10px;
+  font-size: 0.625em;
   margin-left: 5px;
   display: inline-block;
   background: #7bf;
@@ -153,7 +159,7 @@ const ItemIcon = styled.div`
 
 const ItemPeopleIcon = styled.div`
   display: inline-block;
-  font-size: 12px;
+  font-size: 0.75em;
   color: #555;
   @media screen {
     margin-left: 10px;
@@ -180,21 +186,59 @@ const ItemPeopleIcon = styled.div`
   }
 `;
 
-const ItemPoints = styled.div`
-  margin-top: 5px;
+const ItemPoints = styled.ul`
+  margin: 5px 0 0;
+  list-style-type: '—';
+  padding: 0 0 0 0.6em;
 `;
 
-const ItemPoint = styled.div`
-  font-size: 12px;
-  &:before {
-    content: '— ';
-  }
+const ItemPoint = styled.li`
+  padding-left: 0.2em;
+  font-size: 0.75em;
   & + & {
     margin-top: 2px;
   }
+  &::marker {
+    margin-left: -1em;
+  }
   @media print {
-    font-size: 14px;
+    font-size: 0.875em;
     margin-top: 3px;
+  }
+`;
+
+const ItemDetails = styled.div`
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+`;
+const ItemDetailsLeft = styled.div`
+  flex: 1 1 auto;
+`;
+const ItemDetailsRight = styled.dt`
+  margin: 0;
+  padding: 0;
+  flex: 0 0 30%;
+  border-left: 2px #bbb solid;
+  padding-left: 2em;
+  font-size: 0.875em;
+  @media screen {
+    display: none;
+  }
+`;
+
+const ItemDetailsRightKey = styled.dt`
+  margin: 0;
+  padding: 0;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+`;
+const ItemDetailsRightValue = styled.dd`
+  margin: 0;
+  padding: 0;
+  & + dt {
+    margin-top: 1em;
   }
 `;
 
@@ -214,7 +258,9 @@ function Item({
     icon,
     team,
     points,
-    hideFromPrintVersion
+    hideFromPrintVersion,
+    work,
+    keyAchievement
   },
   onEnter,
   onLeave,
@@ -297,7 +343,7 @@ function Item({
       (<ItemPrintDuration>({formatDate(from)})</ItemPrintDuration>) :
       (
         <ItemPrintDuration>
-          ({formatDate(from)} — {formatDate(to)})
+          ({formatDate(from)} — {to === now ? 'now' : formatDate(to)})
         </ItemPrintDuration>
       )
   );
@@ -317,11 +363,33 @@ function Item({
         {duration}
         {printDuration}
       </ItemHeader>
-      {textContent}
-      {videoContent}
-      {audioContent}
-      {photoContent}
-      {pointsContent}
+        {textContent}
+      <ItemDetails>
+        <ItemDetailsLeft>
+          {videoContent}
+          {audioContent}
+          {photoContent}
+          {pointsContent}
+        </ItemDetailsLeft>
+        {pointsContent && <ItemDetailsRight>
+          {keyAchievement && (
+            <>
+              <ItemDetailsRightKey>Key achievement</ItemDetailsRightKey>
+              <ItemDetailsRightValue>
+                {keyAchievement}
+              </ItemDetailsRightValue>
+            </>
+          )}
+          {work && (
+            <>
+              <ItemDetailsRightKey>Technologies</ItemDetailsRightKey>
+              <ItemDetailsRightValue>
+                {work.filter((work) => !onlyTimelineWork[work]).join(', ')}
+              </ItemDetailsRightValue>
+            </>
+          )}
+        </ItemDetailsRight>}
+      </ItemDetails>
     </ItemWrapper>
   );
 }
@@ -339,6 +407,7 @@ export function TimelineItems({dates, index, onEnter, onLeave, hoveredId}: {
         <TimelineDate
           data-date={date}
           hideFromPrintVersion={(index[date] || []).every(({hideFromPrintVersion}) => hideFromPrintVersion)}
+          hideFromTabletVersion={!index[date]}
           key={date}
         >
           <TimelineDateMarker dateTime={date} aria-hidden={true}>

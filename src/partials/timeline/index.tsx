@@ -60,6 +60,9 @@ const TimelineContentsWrapper = styled.section`
   @media print {
     display: none;
   }
+  @media (max-width: 768px) {
+    padding-left: 0;
+  }
 `;
 
 

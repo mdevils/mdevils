@@ -33,7 +33,7 @@ const ModalClose = styled.div`
   }
   ::after {
     content: '✖';
-    font-size: 24px;
+    font-size: 1.5em;
     color: white;
     cursor: pointer;
   }

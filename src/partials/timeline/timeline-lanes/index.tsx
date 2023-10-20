@@ -104,6 +104,9 @@ const LanesWrapper = styled.div`
   @media print {
     display: none;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 const LaneWrapper = styled.div`
   margin-left: ${timelineBarMargin}px;

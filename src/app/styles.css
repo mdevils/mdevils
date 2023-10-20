@@ -9,6 +9,14 @@ body, input {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
+  font-size: 16px;
+}
+
+
+@media print {
+  body {
+    font-size: 20px;
+  }
 }
 
 h1, h2, h3, h4, h5 {
@@ -25,6 +33,5 @@ a:hover {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

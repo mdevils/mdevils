@@ -2,14 +2,14 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const fontSizeByHeadingLevel = {
-  1: 24,
-  2: 18
+  1: 1.5,
+  2: 1.125
 };
 
 type HeadingLevel = 1 | 2;
 
 const Title = styled.div<{level: HeadingLevel}>`
-  font-size: ${({level}) => fontSizeByHeadingLevel[level]}px;
+  font-size: ${({level}) => fontSizeByHeadingLevel[level]}em;
   margin: 0;
   padding: 0;
 `;

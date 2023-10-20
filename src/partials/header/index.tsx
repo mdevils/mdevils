@@ -37,7 +37,7 @@ const Intro = styled.div`
 const Name = styled.h1`
   margin: 0;
   padding: 0;
-  font-size: 24px;
+  font-size: 1.5em;
   margin-bottom: 5px;
 `;
 
@@ -64,7 +64,7 @@ const SocialLinks = styled.div`
 `;
 
 const PhoneNumber = styled.div`
-  font-size: 14px;
+  font-size: 0.875em;
   @media screen {
     display: none;
   }
@@ -90,21 +90,21 @@ const SocialWrapper = styled.a`
 const SocialScreenText = styled.span`
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 0.625em;
   @media print {
     display: none;
   }
 `;
 
 const SocialPrintText = styled.span`
-  font-size: 12px;
+  font-size: 0.75em;
   @media screen {
     display: none;
   }
 `;
 
 const Email = styled.a`
-  font-size: 14px;
+  font-size: 0.875em;
   text-decoration: none;
   font-weight: 400;
 `;
@@ -122,7 +122,7 @@ const MenuItem = styled.li`
 `;
 const MenuItemText = styled.span`
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 0.75em;
 `;
 
 const email = atob(['bWRldmlsc0Bn', 'bWFpbC5jb20='].join(''));
@@ -149,21 +149,21 @@ export const Header = withRouter(({location}) => {
         <Menu>
           {path !== '/' && (
             <MenuItem>
-              <Link to={'/'}>
+              <Link to='/'>
                 <MenuItemText>← Home</MenuItemText>
               </Link>
             </MenuItem>
           )}
           {path !== '/books' && (
             <MenuItem>
-              <Link to={'/books'}>
+              <Link to='/books'>
                 <MenuItemText>My Books</MenuItemText>
               </Link>
             </MenuItem>
           )}
           {path !== '/projects' && (
             <MenuItem>
-              <Link to={'/projects'}>
+              <Link to='/projects'>
                 <MenuItemText>Projects</MenuItemText>
               </Link>
             </MenuItem>

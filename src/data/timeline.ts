@@ -2,6 +2,7 @@ export type TimelineItemSource = {
   type: 'work' | 'openSource' | 'education' | 'public';
   title: string;
   points?: string[];
+  keyAchievement?: string;
   link?: string;
   video?: string;
   audio?: string;
@@ -24,7 +25,11 @@ export type TimelineItem = TimelineItemSource & {
 
 const date = new Date();
 const pad = (n: number) => n < 10 ? '0' + n : `${n}`;
-const now = date.getFullYear() + '-' + pad(date.getMonth() + 1);
+export const now = date.getFullYear() + '-' + pad(date.getMonth() + 1);
+
+export const onlyTimelineWork: Record<string, boolean> = {
+  'Team leadership': true
+};
 
 export const showWorkInTimeline: {[key: string]: boolean} = {
   'Team leadership': true,
@@ -123,7 +128,8 @@ export const timeline: TimelineItem[] = ([
       'Optimising database workflows, database performance (MySQL).',
       'Covering the projects with unit-tests. Maintaining high coverage level.',
       'Working with the other developers, providing support.'
-    ]
+    ],
+    keyAchievement: 'Designed and developed the core platform for the product from scratch and supported other developers.'
   },
   {
     type: 'work',
@@ -157,7 +163,8 @@ export const timeline: TimelineItem[] = ([
       'Creating server-side for the project using Node.js.',
       'Developing required Maps UI features with full cross-browser compatibility.'
     ],
-    team: 5
+    team: 5,
+    keyAchievement: 'Designed and implemented the new version of the product.'
   },
   {
     type: 'work',
@@ -182,7 +189,7 @@ export const timeline: TimelineItem[] = ([
     link: 'https://matterway.io/',
     from: '2015-10',
     to: '2019-05',
-    work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux'],
+    work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux', 'ReactNative', 'Electron'],
     points: [
       'Leading the Engineering Team consisting of developers and QAs.',
       'Designing the core architecture, deciding on upgrades and refactoring.',
@@ -199,7 +206,8 @@ export const timeline: TimelineItem[] = ([
       'Continuous integration: releases, unit tests, integration tests, test coverage monitoring.',
       'Backend infrastructure using Docker containers, aggregated server status monitoring.'
     ],
-    team: 5
+    team: 5,
+    keyAchievement: 'Organized all the engineers in the company to work as a team and provide predictable results.'
   },
   {
     type: 'work',
@@ -218,7 +226,8 @@ export const timeline: TimelineItem[] = ([
       'Optimising in-team and cross-team processes.',
       'Participating in department-level decisions and initiatives.'
     ],
-    team: 10
+    team: 10,
+    keyAchievement: 'Organized processes in the team and helped team members grow in terms of expertise.'
   },
   {
     type: 'work',
@@ -241,7 +250,8 @@ export const timeline: TimelineItem[] = ([
       'Establishing and managing agile development and release process.',
       'Helping team members to develop their skills, arranging external learning.'
     ],
-    team: 6
+    team: 6,
+    keyAchievement: 'Built a team from scratch, which later became the leading team in the department.'
   },
   {
     type: 'education',

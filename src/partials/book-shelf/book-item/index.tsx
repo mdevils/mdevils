@@ -20,7 +20,7 @@ const BookImageWrapper = styled.div`
 
 const BookTitle = styled.div`
   margin-top: 5px;
-  font-size: 12px;
+  font-size: 0.75em;
   width: 100%;
   line-height: 14px;
   height: 28px;

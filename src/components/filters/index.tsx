@@ -49,11 +49,12 @@ export function Filters({
 
 const FilterWrapper = styled.label<{color: string, checked: boolean}>`
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   background-color: ${({color}) => color};
   padding: 3px 10px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875em;
   margin: 2px 0;
   transition: opacity 0.2s linear;
   ${({checked}) => checked ? '' : 'opacity: 0.5;'}

@@ -53,11 +53,10 @@ const TimelineSymmaryItemList = styled.ul`
 const TimelineSymmaryItem = styled.li`
   flex: 0 0 50%;
   min-width: 240px;
-  font-size: 16px;
   margin: 6px 0 0;
   padding: 0;
   @media print {
-    font-size: 14px;
+    font-size: 0.875em;
     margin: 3px 0 0;
     flex: 0 0 25%;
     min-width: 180px;

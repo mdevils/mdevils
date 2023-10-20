@@ -38,22 +38,21 @@ const ItemWrapper = styled.li<{isOpenSource: boolean}>`
   }
 `;
 const ItemDuration = styled.span`
-  font-size: 14px;
+  font-size: 0.875em;
   color: #555;
   white-space: nowrap;
 `;
 const ItemHeader = styled.div``;
 const ItemTitle = styled.span`
   font-weight: 500;
-  font-size: 16px;
   margin-right: 10px;
 `;
 const ItemText = styled.span`
-  font-size: 14px;
+  font-size: 0.875em;
 `;
 const ItemTechs = styled.div`
   margin-top: 5px;
-  font-size: 14px;
+  font-size: 0.875em;
   font-weight: 500;
 `;
 const ItemTech = styled.span`
@@ -65,7 +64,7 @@ const ItemTechTitle = styled.span`
 `;
 const ItemChallenges = styled.div`
   margin-top: 5px;
-  font-size: 14px;
+  font-size: 0.875em;
   font-weight: 500;
 `;
 const ItemChallenge = styled.span`
