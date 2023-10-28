@@ -256,7 +256,7 @@ export const timeline: TimelineItem[] = ([
   {
     type: 'education',
     title: 'Graduated school',
-    from: '1993-09',
+    from: '1994-09',
     to: '2004-06',
     hideFromPrintVersion: true
   },
