@@ -235,7 +235,7 @@ export const timeline: TimelineItem[] = ([
     text: 'ARRIVAL',
     link: 'https://www.arrival.com/',
     from: '2020-04',
-    to: now,
+    to: '2024-01',
     work: ['Team leadership', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Redux', 'GraphQL'],
     points: [
       'Leading the Engineering Team consisting of developers and QAs.',
@@ -252,6 +252,21 @@ export const timeline: TimelineItem[] = ([
     ],
     team: 6,
     keyAchievement: 'Built a team from scratch, which later became the leading team in the department.'
+  },
+  {
+    type: 'work',
+    title: 'Senior Full-Stack Developer',
+    text: 're:solution',
+    link: 'https://resolution.de/',
+    from: '2024-04',
+    to: now,
+    work: ['JavaScript', 'TypeScript', 'Node.js', 'React', 'GraphQL', 'TRPC'],
+    points: [
+      'Developing full-stack applications for Atlassian Marketplace.',
+      'Developing and maintaining OpenSource projects for the company.',
+      'Supporting high quality of source code and infrastructure.',
+      'Helping team members to develop their skills and expertise.',
+    ],
   },
   {
     type: 'education',
