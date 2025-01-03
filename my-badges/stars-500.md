@@ -4,7 +4,7 @@
 
 Repos:
 
-* <a href="https://github.com/mdevils/html-entities">mdevils/html-entities: ★639</a>
+* <a href="https://github.com/mdevils/html-entities">mdevils/html-entities: ★640</a>
 * <a href="https://github.com/mdevils/css-selector-parser">mdevils/css-selector-parser: ★138</a>
 * <a href="https://github.com/mdevils/analyze">mdevils/analyze: ★5</a>
 * <a href="https://github.com/mdevils/yandex-pdd-dns">mdevils/yandex-pdd-dns: ★5</a>
