@@ -7,7 +7,7 @@ Repos:
 * <a href="https://github.com/typescript-exercises/typescript-exercises">typescript-exercises/typescript-exercises: ★2885</a>
 * <a href="https://github.com/mdevils/html-entities">mdevils/html-entities: ★641</a>
 * <a href="https://github.com/mdevils/css-selector-parser">mdevils/css-selector-parser: ★138</a>
-* <a href="https://github.com/mdevils/rust-osakit">mdevils/rust-osakit: ★6</a>
+* <a href="https://github.com/mdevils/rust-osakit">mdevils/rust-osakit: ★7</a>
 * <a href="https://github.com/mdevils/analyze">mdevils/analyze: ★5</a>
 * <a href="https://github.com/mdevils/yandex-pdd-dns">mdevils/yandex-pdd-dns: ★5</a>
 * <a href="https://github.com/RobinTail/chat">RobinTail/chat: ★5</a>
