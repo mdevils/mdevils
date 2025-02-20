@@ -173,5 +173,12 @@
     "desc": "I joined GitHub 15 years ago.",
     "body": "",
     "image": "https://my-badges.github.io/my-badges/github-anniversary-15.png"
+  },
+  {
+    "id": "friday-13",
+    "tier": 0,
+    "desc": "I committed on Friday the 13th, One… By One…",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mdevils/api-typescript-generator/commit/5c89ec93be0c19689777134ba843635b44491443\">5c89ec9</a>\n- <a href=\"https://github.com/mdevils/api-typescript-generator/commit/52511696dfa96251b85c441323dd1bbd39c1585d\">5251169</a>",
+    "image": "https://my-badges.github.io/my-badges/friday-13.png"
   }
 ]
