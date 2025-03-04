@@ -7,9 +7,9 @@ Repos:
 * <a href="https://github.com/mdevils/html-entities">mdevils/html-entities: ★645</a>
 * <a href="https://github.com/mdevils/css-selector-parser">mdevils/css-selector-parser: ★138</a>
 * <a href="https://github.com/mdevils/rust-osakit">mdevils/rust-osakit: ★7</a>
+* <a href="https://github.com/RobinTail/chat">RobinTail/chat: ★6</a>
 * <a href="https://github.com/mdevils/analyze">mdevils/analyze: ★5</a>
 * <a href="https://github.com/mdevils/yandex-pdd-dns">mdevils/yandex-pdd-dns: ★5</a>
-* <a href="https://github.com/RobinTail/chat">RobinTail/chat: ★5</a>
 * <a href="https://github.com/mdevils/node-sibling">mdevils/node-sibling: ★4</a>
 * <a href="https://github.com/mdevils/docopt-js">mdevils/docopt-js: ★4</a>
 * <a href="https://github.com/mdevils/sahtml-query">mdevils/sahtml-query: ★4</a>
