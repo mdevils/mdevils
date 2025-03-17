@@ -4,12 +4,12 @@
 
 Commits:
 
-- <a href="https://github.com/mdevils/libtest-mimic-collect-macro/commit/9dc05103cc1dec27b3c16ae63ef57d22e526dd7b">9dc0510</a>
-- <a href="https://github.com/mdevils/libtest-mimic-collect-macro/commit/9ab2814f88e2d7b5c259845cb6996421c22bab30">9ab2814</a>
-- <a href="https://github.com/mdevils/libtest-mimic-collect/commit/76acd4d735308b49ce9a138ee5e0f3acf2488a71">76acd4d</a>
-- <a href="https://github.com/mdevils/libtest-mimic-collect/commit/826856c3f6a1b6f39b2659475d82801215f2d48b">826856c</a>
-- <a href="https://github.com/mdevils/libtest-mimic-collect/commit/e5aa44e9d97a47764f5d367eb76a374320e1bcdd">e5aa44e</a>
-- <a href="https://github.com/mdevils/libtest-mimic-collect/commit/eccb3baae86e370bf173ea607b4c2f5df8e35e5d">eccb3ba</a>
+- <a href="https://github.com/mdevils/css-selector-parser/commit/d0401907f3d023da48ae2c40cb29f43646a25642">d040190</a>
+- <a href="https://github.com/mdevils/css-selector-parser/commit/15deca6dacd4df9db1b2655c169c7e0d297c5ef0">15deca6</a>
+- <a href="https://github.com/mdevils/css-selector-parser/commit/6bfdcc3c468713cbfb11b424eff2fa42d088136f">6bfdcc3</a>
+- <a href="https://github.com/mdevils/css-selector-parser/commit/83609c6401044f6a398fca6a8c992480b5e4ed5a">83609c6</a>
+- <a href="https://github.com/mdevils/css-selector-parser/commit/ceaa832b7814684e22f975ae0d9db5e9e44e9082">ceaa832</a>
+- <a href="https://github.com/mdevils/css-selector-parser/commit/894053aedd40b7feea67778956f261572b0544c5">894053a</a>
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
