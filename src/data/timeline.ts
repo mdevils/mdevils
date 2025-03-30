@@ -1,3 +1,5 @@
+export type PackageIcon = 'npm' | 'crate';
+
 export type TimelineItemSource = {
   type: 'work' | 'openSource' | 'education' | 'public';
   title: string;
@@ -11,12 +13,17 @@ export type TimelineItemSource = {
   to: string;
   text?: string;
   language?: 'RUS';
-  icon?: 'npm';
+  icon?: PackageIcon;
   work?: string[];
   software?: string[];
   importance?: number;
   team?: number;
   hideFromPrintVersion?: boolean;
+}
+
+export const packageIconLabels: Record<PackageIcon, string> = {
+  npm: 'NPM package',
+  crate: 'Cargo crate'
 }
 
 export type TimelineItem = TimelineItemSource & {
@@ -357,7 +364,7 @@ export const timeline: TimelineItem[] = ([
     link: 'https://www.npmjs.com/package/css-selector-parser',
     icon: 'npm',
     importance: 2,
-    from: '2013-02',
+    from: '2013-03',
     to: now
   },
   {
@@ -369,6 +376,16 @@ export const timeline: TimelineItem[] = ([
     importance: 2,
     from: '2015-06',
     to: '2016-04'
+  },
+  {
+    type: 'openSource',
+    title: 'osakit',
+    text: 'OSAKit API rust crate',
+    link: 'https://crates.io/crates/osakit',
+    icon: 'crate',
+    importance: 2,
+    from: '2024-03',
+    to: now
   },
   {
     type: 'public',

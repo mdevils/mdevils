@@ -5,8 +5,9 @@ import {filterColors, timelineBarSpacer, timelineGridLineColor, TimelineItemLane
 import {formatDate, formatDuration, getDurationInMonths} from '../format-duration';
 import {TimelineItemsByEndDate} from '../get-timeline-index';
 import npmIcon from './npm.png';
+import crateIcon from './crate.png';
 import peopleIcon from './people.png';
-import {now, onlyTimelineWork} from '../../../data/timeline';
+import {now, onlyTimelineWork, PackageIcon, packageIconLabels} from '../../../data/timeline';
 
 const TimelineDate = styled.div<{hideFromPrintVersion: boolean; hideFromTabletVersion: boolean}>`
   position: relative;
@@ -143,14 +144,14 @@ const ItemLang = styled.div`
   }
 `;
 
-const ItemIcon = styled.div`
+const ItemIcon = styled.div<{icon: PackageIcon}>`
   display: inline-block;
   margin-left: 5px;
   position: relative;
   top: 3px;
   height: 14px;
   width: 14px;
-  background: url(${npmIcon});
+  background: url(${({icon}) => icon === 'npm' ? npmIcon : crateIcon});
   background-size: 100% 100%;
   @media print {
     display: none;
@@ -288,7 +289,7 @@ function Item({
     textContent = <>{textContent}<ItemLang aria-label='In russian'>{language}</ItemLang></>
   }
   if (icon) {
-    textContent = <>{textContent}<ItemIcon aria-label='NPM package' /></>
+    textContent = <>{textContent}<ItemIcon icon={icon} aria-label={packageIconLabels[icon]} /></>
   }
   if (team) {
     textContent = <>{textContent}<ItemPeopleIcon>{team} members team</ItemPeopleIcon></>
