@@ -25,7 +25,7 @@ const collectWorkExperience = memoizeOne((timeline: TimelineItem[]) => {
   for (let area of Object.keys(resultByMonth)) {
     result[area] = Object.keys(resultByMonth[area]).length;
   }
-  return result;
+  return Object.fromEntries(Object.entries(result).sort((a, b) => b[1] - a[1]));
 });
 
 const collectPublicEvents = memoizeOne((timeline: TimelineItem[]) => {

@@ -44,7 +44,7 @@ export const showWorkInTimeline: {[key: string]: boolean} = {
   'TypeScript': true,
   'Node.js': true,
   'React': true,
-  'Redux': true
+  'Rust': true,
 };
 
 export const timeline: TimelineItem[] = ([
@@ -385,7 +385,8 @@ export const timeline: TimelineItem[] = ([
     icon: 'crate',
     importance: 2,
     from: '2024-03',
-    to: now
+    to: now,
+    work: ['Rust'],
   },
   {
     type: 'public',

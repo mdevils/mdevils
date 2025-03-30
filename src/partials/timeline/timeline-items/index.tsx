@@ -195,7 +195,7 @@ const ItemPoints = styled.ul`
 
 const ItemPoint = styled.li`
   padding-left: 0.2em;
-  font-size: 0.75em;
+  font-size: 0.9em;
   & + & {
     margin-top: 2px;
   }
