@@ -4,9 +4,9 @@
 
 Repos:
 
-* <a href="https://github.com/typescript-exercises/typescript-exercises">typescript-exercises/typescript-exercises: ★2893</a>
+* <a href="https://github.com/typescript-exercises/typescript-exercises">typescript-exercises/typescript-exercises: ★2894</a>
 * <a href="https://github.com/mdevils/html-entities">mdevils/html-entities: ★650</a>
-* <a href="https://github.com/mdevils/css-selector-parser">mdevils/css-selector-parser: ★139</a>
+* <a href="https://github.com/mdevils/css-selector-parser">mdevils/css-selector-parser: ★138</a>
 * <a href="https://github.com/mdevils/rust-osakit">mdevils/rust-osakit: ★7</a>
 * <a href="https://github.com/RobinTail/chat">RobinTail/chat: ★6</a>
 * <a href="https://github.com/mdevils/analyze">mdevils/analyze: ★5</a>
