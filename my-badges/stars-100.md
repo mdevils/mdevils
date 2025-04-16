@@ -5,7 +5,7 @@
 Repos:
 
 * <a href="https://github.com/mdevils/css-selector-parser">mdevils/css-selector-parser: ★138</a>
-* <a href="https://github.com/mdevils/rust-osakit">mdevils/rust-osakit: ★8</a>
+* <a href="https://github.com/mdevils/rust-osakit">mdevils/rust-osakit: ★9</a>
 * <a href="https://github.com/RobinTail/chat">RobinTail/chat: ★6</a>
 * <a href="https://github.com/mdevils/analyze">mdevils/analyze: ★5</a>
 * <a href="https://github.com/mdevils/yandex-pdd-dns">mdevils/yandex-pdd-dns: ★5</a>
