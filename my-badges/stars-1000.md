@@ -4,7 +4,7 @@
 
 Repos:
 
-* <a href="https://github.com/typescript-exercises/typescript-exercises">typescript-exercises/typescript-exercises: ★2906</a>
+* <a href="https://github.com/typescript-exercises/typescript-exercises">typescript-exercises/typescript-exercises: ★2905</a>
 * <a href="https://github.com/mdevils/html-entities">mdevils/html-entities: ★655</a>
 * <a href="https://github.com/mdevils/css-selector-parser">mdevils/css-selector-parser: ★138</a>
 * <a href="https://github.com/mdevils/rust-osakit">mdevils/rust-osakit: ★10</a>
