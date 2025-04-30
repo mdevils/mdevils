@@ -12,9 +12,9 @@ Repos:
 * <a href="https://github.com/mdevils/api-typescript-generator">mdevils/api-typescript-generator: ★5</a>
 * <a href="https://github.com/mdevils/node-sibling">mdevils/node-sibling: ★4</a>
 * <a href="https://github.com/mdevils/docopt-js">mdevils/docopt-js: ★4</a>
+* <a href="https://github.com/mdevils/fast-memory-cache">mdevils/fast-memory-cache: ★4</a>
 * <a href="https://github.com/mdevils/sahtml-query">mdevils/sahtml-query: ★4</a>
 * <a href="https://github.com/mdevils/encached">mdevils/encached: ★3</a>
-* <a href="https://github.com/mdevils/fast-memory-cache">mdevils/fast-memory-cache: ★3</a>
 * <a href="https://github.com/mdevils/mocha-teamcity-phantomjs">mdevils/mocha-teamcity-phantomjs: ★2</a>
 * <a href="https://github.com/mdevils/lang-example">mdevils/lang-example: ★1</a>
 * <a href="https://github.com/mdevils/isolated-coverage">mdevils/isolated-coverage: ★1</a>
