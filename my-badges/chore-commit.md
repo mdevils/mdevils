@@ -4,7 +4,7 @@
 
 Commits:
 
-- <a href="https://github.com/mdevils/libtest-mimic-collect/commit/76acd4d735308b49ce9a138ee5e0f3acf2488a71">76acd4d</a>: chore: more info to manifest
+- <a href="https://github.com/mdevils/capacity-limiter/commit/1a78864ce5257917c9316e24ba11575972593f98">1a78864</a>: chore(release): 0.1.1
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
