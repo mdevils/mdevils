@@ -18,6 +18,7 @@ Repos:
 * <a href="https://github.com/mdevils/mocha-teamcity-phantomjs">mdevils/mocha-teamcity-phantomjs: ★2</a>
 * <a href="https://github.com/mdevils/lang-example">mdevils/lang-example: ★1</a>
 * <a href="https://github.com/mdevils/isolated-coverage">mdevils/isolated-coverage: ★1</a>
+* <a href="https://github.com/mdevils/capacity-limiter">mdevils/capacity-limiter: ★1</a>
 
 <sup>I have push, maintainer or admin permissions, so I'm definitely an author.<sup>
 

@@ -4,7 +4,7 @@
 
 Commits:
 
-- <a href="https://github.com/mdevils/capacity-limiter/commit/1a78864ce5257917c9316e24ba11575972593f98">1a78864</a>: chore(release): 0.1.1
+- <a href="https://github.com/mdevils/capacity-limiter/commit/287f03e9efd006c6922983f3b75d062def09338e">287f03e</a>: chore(release): 1.0.0
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
