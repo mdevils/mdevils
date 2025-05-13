@@ -4,7 +4,7 @@
 
 Repos:
 
-* <a href="https://github.com/mdevils/html-entities">mdevils/html-entities: ★656</a>
+* <a href="https://github.com/mdevils/html-entities">mdevils/html-entities: ★657</a>
 * <a href="https://github.com/mdevils/css-selector-parser">mdevils/css-selector-parser: ★138</a>
 * <a href="https://github.com/mdevils/rust-osakit">mdevils/rust-osakit: ★10</a>
 * <a href="https://github.com/RobinTail/chat">RobinTail/chat: ★6</a>
