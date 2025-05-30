@@ -3,7 +3,7 @@ Hi, I'm Marat — a dedicated open-source developer passionate about creating ef
 ## My Focus Areas:
 
 * **Developer Tooling**: My projects often revolve around enhancing developer productivity through tools that simplify complex tasks.
-I'm currently actively contributing to [Biome](https://biomejs.dev/), a next-generation JavaScript and TypeScript linter, formatter, and bundler that aims to provide a comprehensive solution for modern web development.
+I'm currently actively contributing to [Biome](https://biomejs.dev/), a next-generation JavaScript and TypeScript linter and formatter that aims to provide a comprehensive solution for modern web development.
 
 * **HTML Entity Handling**: I maintain [html-entities](https://github.com/mdevils/html-entities), a robust library for encoding and decoding HTML entities, widely used in web development projects.
 
