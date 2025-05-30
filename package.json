@@ -1,0 +1,14 @@
+{
+  "name": "mdevils-gh",
+  "version": "1.0.0",
+  "author": "Marat Dulin",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^22.0.0",
+    "@types/node": "^22.15.24",
+    "download-stats": "^0.3.4",
+    "npm-api": "^1.0.1",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
