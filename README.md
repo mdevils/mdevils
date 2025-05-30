@@ -31,20 +31,21 @@ If you find my projects helpful and wish to support ongoing development, conside
 
 ## Project Stats
 
-| Project | Monthly Downloads |
-| --- | --- |
-| `html-entities` | [![NPM Downloads](https://img.shields.io/npm/dm/html-entities)](https://www.npmjs.com/package/html-entities) |
+| Project               | Stats                                                                                                                    |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------|
+| `html-entities`       | [![NPM Downloads](https://img.shields.io/npm/dm/html-entities)](https://www.npmjs.com/package/html-entities)             |
 | `css-selector-parser` | [![NPM Downloads](https://img.shields.io/npm/dm/css-selector-parser)](https://www.npmjs.com/package/css-selector-parser) |
-| `fast-memory-cache` | [![NPM Downloads](https://img.shields.io/npm/dm/fast-memory-cache)](https://www.npmjs.com/package/fast-memory-cache) |
-| `capacity-limiter` | [![NPM Downloads](https://img.shields.io/npm/dm/capacity-limiter)](https://www.npmjs.com/package/capacity-limiter) |
-| `osakit` | [![Crates.io Downloads](https://img.shields.io/crates/d/osakit)](https://crates.io/crates/osakit) |
+| `fast-memory-cache`   | [![NPM Downloads](https://img.shields.io/npm/dm/fast-memory-cache)](https://www.npmjs.com/package/fast-memory-cache)     |
+| `capacity-limiter`    | [![NPM Downloads](https://img.shields.io/npm/dm/capacity-limiter)](https://www.npmjs.com/package/capacity-limiter)       |
+| `osakit`              | [![Crates.io Downloads](https://img.shields.io/crates/d/osakit)](https://crates.io/crates/osakit)                        |
+| TypeScript Exercises  | [![GitHub Repo stars](https://img.shields.io/github/stars/typescript-exercises/typescript-exercises)](https://github.com/typescript-exercises/typescript-exercises) |
 
 ## Past Contributions
 
-| Project | Monthly Downloads |
-|---------| --- |
-| `jscs`  | [![NPM Downloads](https://img.shields.io/npm/dm/jscs)](https://www.npmjs.com/package/jscs) |
-| `jscs-jsdoc` | [![NPM Downloads](https://img.shields.io/npm/dm/jscs-jsdoc)](https://www.npmjs.com/package/jscs-jsdoc) |
-| `cst` | [![NPM Downloads](https://img.shields.io/npm/dm/cst)](https://www.npmjs.com/package/cst) |
+| Project                | Stats                                                                                                                      |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| `jscs`                 | [![NPM Downloads](https://img.shields.io/npm/dm/jscs)](https://www.npmjs.com/package/jscs)                                 |
+| `jscs-jsdoc`           | [![NPM Downloads](https://img.shields.io/npm/dm/jscs-jsdoc)](https://www.npmjs.com/package/jscs-jsdoc)                     |
+| `cst`                  | [![NPM Downloads](https://img.shields.io/npm/dm/cst)](https://www.npmjs.com/package/cst)                                   |
 | `esprima-harmony-jscs` | [![NPM Downloads](https://img.shields.io/npm/dm/esprima-harmony-jscs)](https://www.npmjs.com/package/esprima-harmony-jscs) |
 
