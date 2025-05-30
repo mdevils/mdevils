@@ -44,7 +44,7 @@ If you find my projects helpful and wish to support ongoing development, conside
 
 | Project                | Stats                                                                                                                      |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------|
-| `jscs`                 | [![NPM Downloads](https://img.shields.io/npm/dm/jscs)](https://www.npmjs.com/package/jscs)                                 |
+| `jscs`                 | [![GitHub Repo stars](https://img.shields.io/github/stars/jscs-dev/node-jscs)](https://github.com/jscs-dev/node-jscs)      |
 | `jscs-jsdoc`           | [![NPM Downloads](https://img.shields.io/npm/dm/jscs-jsdoc)](https://www.npmjs.com/package/jscs-jsdoc)                     |
 | `cst`                  | [![NPM Downloads](https://img.shields.io/npm/dm/cst)](https://www.npmjs.com/package/cst)                                   |
 | `esprima-harmony-jscs` | [![NPM Downloads](https://img.shields.io/npm/dm/esprima-harmony-jscs)](https://www.npmjs.com/package/esprima-harmony-jscs) |
